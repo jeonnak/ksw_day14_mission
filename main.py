@@ -1,45 +1,45 @@
 """
-10.1 아무 내용이 없는 Thing 클래스를 만들어서 출력한다.
-이 클래스의 example 객체를 생성해서 출력한다.
-이때 두 출력값은 같은가?
-"""
 
-# 아무 내용이 없는 Thing 클래스 생성
-class Thing():
-    pass
+10.4 name, symbol, number 인스턴스 속성 가진
+ Element 클래스를 만들어보자.
+ 이 클래스에서 'Hydrogen', 'H', 1 값을 가진 객체를 생성한다.
 
-# Thing 클래스 출력
-print(Thing)
+10.5 'name' : 'Hydrogen', 'symbol' : 'H', 'number' : 1과 같이
+ 키와 값으로 이루어진 el_dict 딕셔너리를 만들어보자.
+ 그리고 el_dict 딕셔너리로부터 Element 클래스의 hydrogen 객체를 생성한다.
 
-# Thing 클래스의 example 객체 생성
-example = Thing()
-
-# example 객체 출력
-print(example)
+10.6 Element 클래스에서 객체의 속성 (name, symbol, number) 값을
+ 출력하는 dump() 메서드를 정의한다. 이 클래스의 hydrogen 객체를
+ 생성하고, dump() 메서드로 이 속성을 출력한다.
 
 """
-10.2 Thing2 클래스를 만들고 이 클래스의 letters 속성에 값 'abc'를
-할당한 후 letters를 출력해보자.
-"""
 
-# Thing2 클래스 생성
-class Thing2():
+# name, symbol, number 인스턴스 속성 가진 Element 클래스 생성
+class Element():
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
 
-    # letters 속성에 값 'abc'할당
-    letters = 'abc'
+ # name, symbol, number 속성의 값을 출력하는 dump() 메서드
 
-# 출력
-print(Thing2)
+    def dump(self):
+        print(self.name, self.symbol, self.number)
 
+# Element 클래스에서 'Hydrogen','H', 1 값 가진 객체 produce 생성
 
-"""
-10.3 Thing3 클래스를 만든다. 이번에는 인스턴스(객체)의 letters 속성에
-값 'xyz'를 할당한 후 letters를 출력한다.
-letters를 출력하기 위해 객체를 생성해야 하는가?
-"""
+produce = Element('Hydrogen','H', 1)
+print(produce.name, produce.symbol, produce.number)
 
-class Thing3():
-    def __init__(self):
-        self.letters = 'xyz'
-example = Thing3()
-print(example.letters)
+# 'name' : 'Hydrogen', 'symbol' : 'H', 'number' : 1과 같이
+#  키와 값으로 이루어진 el_dict 딕셔너리 생성
+
+el_dict = {'name' : 'Hydrogen', 'symbol' : 'H', 'number' : 1}
+
+# el_dict 딕셔너리로부터 Element 클래스의 hydrogen 객체를 생성
+
+hydrogen = Element(el_dict['name'], el_dict['symbol'], el_dict['number'])
+print(hydrogen.name, hydrogen.symbol, hydrogen.number)
+
+# dump() 메서드 출력
+hydrogen.dump()
