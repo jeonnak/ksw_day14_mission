@@ -1,46 +1,37 @@
 """
-10.8 Element 클래스를 수정해서 name, symbol, number의 속성을
- private로 만든다. 각 속성값을 반환하기 위해 getter 프로퍼티를 정의한다.
+10.9
+세 클래스 Bear, Rabbit, Octothorpe를 정의해보자.
+각 클래스에 eats() 메서드를 정의해보자.
+각 메서드는 'berries' (Bear), 'clover' (Rabbit), 'campers' (Octothorpe)를
+반환한다. 각 클래스의 객체를 생성하고, eats() 메서드의 반환값을 출력한다.
 """
 
-# name, symbol, number 인스턴스 private 속성 가지도록 Element 클래스 수정
-class Element():
-    def __init__(self, name, symbol, number):
-        self.hidden__name = name
-        self.hidden__symbol = symbol
-        self.hidden__number = number
+class Bear():
+    def __init__(self, berries):
+        self.berries = berries
 
-    @property
-    def name(self):
-        print('getter')
-        return self.hidden__name
+    def eats(self):
+        print(f'{self.berries}')
 
-    @name.setter
-    def name(self, name):
-        print('setter')
-        self.hidden__name = name
+food = Bear('berries')
+food.eats()
 
-    @property
-    def symbol(self):
-        print('getter')
-        return self.hidden__symbol
+class Rabbit():
+    def __init__(self, clover):
+        self.clover = clover
 
-    @symbol.setter
-    def symbol(self, symbol):
-        print('setter')
-        self.hidden__symbol = symbol
+    def eats(self):
+        print(f'{self.clover}')
 
-    @property
-    def number(self):
-        print('getter')
-        return self.hidden__number
+food = Rabbit('clover')
+food.eats()
 
-    @number.setter
-    def number(self, number):
-        print('setter')
-        self.hidden__number = number
+class Octothorpe():
+    def __init__(self, campers):
+        self.campers = campers
 
-produce = Element('Hydrogen', 'H', 1)
-produce.name
-produce.symbol
-produce.number
+    def eats(self):
+        print(f'{self.campers}')
+
+food = Octothorpe('campers')
+food.eats()
