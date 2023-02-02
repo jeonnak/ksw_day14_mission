@@ -1,37 +1,38 @@
 """
-10.9
-세 클래스 Bear, Rabbit, Octothorpe를 정의해보자.
-각 클래스에 eats() 메서드를 정의해보자.
-각 메서드는 'berries' (Bear), 'clover' (Rabbit), 'campers' (Octothorpe)를
-반환한다. 각 클래스의 객체를 생성하고, eats() 메서드의 반환값을 출력한다.
+10.10
+Laser, Claw, SmartPhone 클래스를 정의한다.
+각 클래스는 does() 메서드를 갖고 있다.
+각 메서드는 'disintegrate' (Laser),
+'crush' (Claw) 또는 'ring' (Smart Phone)을
+반환한다. 그리고 각 클래스의 객체를 갖는 Robot 클래스를 정의한다.
+Robot 클래스의 객체가 갖고 있는 내용을 출력하는 does() 메서드를 정의한다.
 """
 
-class Bear():
-    def __init__(self, berries):
-        self.berries = berries
+class Laser():
+    def __init__(self, disintegrate):
+        self.disintegrate = disintegrate
 
-    def eats(self):
-        print(f'{self.berries}')
+obL = Laser('disintegrate')
 
-food = Bear('berries')
-food.eats()
+class Claw():
+    def __init__(self, crush):
+       self.crush = crush
 
-class Rabbit():
-    def __init__(self, clover):
-        self.clover = clover
+obC = Claw('crush')
 
-    def eats(self):
-        print(f'{self.clover}')
+class Smartphone():
+    def __init__ (self, ring):
+        self.ring = ring
 
-food = Rabbit('clover')
-food.eats()
+obS = Smartphone('ring')
 
-class Octothorpe():
-    def __init__(self, campers):
-        self.campers = campers
+class Robot():
+    def __init__(self, obL, obC, obS):
+        self.obL = obL
+        self.obC = obC
+        self.obS = obS
 
-    def eats(self):
-        print(f'{self.campers}')
+    def does():
+        print(obL, obC, obS)
 
-food = Octothorpe('campers')
-food.eats()
+Robot.does()
